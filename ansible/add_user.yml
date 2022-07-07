@@ -1,0 +1,31 @@
+---
+  name:
+  hosts:
+  vars_prompt:
+    - name: "username"
+      prompt: "Enter"
+      private: no
+    - name: "passwor"
+      prompt: "Enter passwd"
+      private: yes
+tasks:
+  - name: Sudo group
+    group:
+      state=presente
+  - name: Passwd sudo
+    lineinfile:
+      dest:
+      regexp:
+      line:
+  - name: Add user
+    user:
+      shell=a
+      group= a
+      createhome=a
+  - name: Add keys
+    authorized_keys:
+      user=
+      keys=
+    with_file:
+      - "./"
+    

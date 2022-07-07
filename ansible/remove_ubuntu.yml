@@ -1,0 +1,9 @@
+---
+  - name: remove
+    hosts: all
+    tasks:
+      - name: remove user
+        user:
+          name=ubuntu
+          state=absent
+          force=yes
